@@ -1,0 +1,3 @@
+# Jogo da memória da Marvel
+Desafio proposto pelo professor Felipe Silva Aguiar da empresa de tecnologia e inovação DIO, de implementar outras funcionalides no jogo da memória criado em conjunto com a DIO.
+A implementação no jogo foi a troca de tema para jogo da memória de personagens da Marvel, aonde cada card possui um gif de um personagem ao clicar. Também foi adicionado alguns efeitos sonoros, que acontecem quando o jogador clica no card para vira-lo quando o jogador erra o par e quando o player acerta o par. Também foi acrescentado um fundo animado com imagens de quadrinhos dos personagens e uma paleta de cores do tema. Não foram muitas implementaçoes mas me ajudaram bastante a ter mais conhecimento na linguagem Javascript e no poder ela tem de manipular a dom.

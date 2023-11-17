@@ -1,0 +1,188 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url(../imgs/marvelBody.jpg);
+    background-size: cover;
+    background-blend-mode: color-burn;
+    background-color: var(--red);
+    user-select: none;
+    animation: dow 20s linear infinite ;
+    animation-delay: 1000ms;
+}
+:root{
+    --vine: #4B0A08;
+    --light-vine: #6A0C0C;
+    --red: #AA0404;
+    --golden: #FBCA03;
+    --burn-yellow: #BA7E10;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    background: linear-gradient(
+        325deg, var(--vine) 0%, var(--light-vine) 30%,
+        var(--red) 50%, var(--golden) 70%, var(--burn-yellow) 100%
+    );
+    padding: 40px 60px;
+    border-radius: 7px;
+    box-shadow: 3px 2px 9px #000000de;
+}
+
+h2{
+    font-size: 3em;
+    color: var(--red);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.logoMarvel{
+    width: 90px;
+    height: 27px;
+    position: absolute;
+    z-index: 1;
+    top: 15px;
+}
+
+.reset {
+    padding: 15px 20px;
+    width: 100%;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    font-size: 1.5em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 7px;
+    box-shadow: 3px 2px 9px #1d1d1d;
+}
+
+.reset:focus{/*QUANDO CLICA FAZ ALGUMA COISA!!!!!!!!!!!!!!!!!!!!!!*/
+    color: #fff;
+    background-color: var(--red);
+}
+
+.game{
+    width: 430px;
+    height: 430px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    transform-style: preserve-3d;
+    perspective: 500px;
+}
+
+.item{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 6px;
+   
+
+    font-size: 3.5em;
+    transform: rotateY(180deg);
+    transition: 0.25s;
+}
+.item img {
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+}
+
+.item::after{
+    content: "";
+    font-size: 20px;
+    position: absolute;
+    color: var(--red);
+    inset: 0;
+    background: #ffffff;
+    transition: 0.25s;
+    transform: rotateY(0deg);
+    border-radius: 6px;
+    backface-visibility: hidden;
+    box-shadow: 1px 1px 15px black;
+    z-index: 1;
+}
+
+.item.boxOpen { /*TODO .item QUE TIVER A CLASSE .boxOpen ELE FAZ ALGUMA COISA*/
+    transform: rotateY(0deg);
+}
+
+.boxOpen::after,
+.boxMatch::after {
+    transform: rotateY(180deg);
+}
+
+.animFind {
+    animation: animFind .8s normal;
+}
+
+.youWin{
+    width: 250px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--light-vine);
+    color: #fff;
+    position: absolute;
+    top: 15px;
+    border: 2px solid var(--golden);
+    font-size: 20px;
+    border-radius: 10px;
+    animation: cong 2s linear infinite;
+}
+
+@keyframes animFind {
+    0%{
+        transform: scale(1.25);
+        border: 1px solid black;
+    }
+}
+@keyframes dow{
+    0%{
+        background-color: var(--red);
+        background-size: 105%;
+    }
+    25%{
+        background-color: var(--light-vine);
+        background-size: 103%;
+    }
+    50%{
+        background-color: var(--burn-yellow);
+        background-size: 100%;
+    }
+    75%{
+        background-color: var(--golden);
+        background-size: 103%;
+    }
+    100%{
+        background-color: var(--red);
+        background-size: 105%;
+    }
+}
+
+@keyframes cong {
+    0%{
+        transform: scale(1.2);
+    }
+    50%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.2);
+    }
+}
