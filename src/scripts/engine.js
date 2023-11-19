@@ -162,7 +162,7 @@ function levelChoice(){
     state.view.buttonChoice.forEach((level) => {
         level.addEventListener('click', () => {
             if(level.className === 'easy'){
-                state.values.currentTime = 1660; 
+                state.values.currentTime = 60; 
                 state.actions.stopTimeCountDownInitial = setInterval(countDownToinitGame, 700);
                 state.view.time.textContent = state.values.currentTime;
                 state.view.level.style.display = 'none'
