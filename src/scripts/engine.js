@@ -143,7 +143,7 @@ function checkMatch(){
         div.classList.add("youWin");
         p.innerHTML = `<p>VOCÊ VENCEU <br> em ${state.values.initialTime - state.values.currentTime} Segundos!!</p>`;
         div.appendChild(p);
-        document.body.appendChild(div);
+        document.querySelector('.game').appendChild(div);
         state.values.currentTime = 1;
         setTimeout(state.actions.reload, 3000);
     }
