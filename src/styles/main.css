@@ -352,12 +352,57 @@ h2{
         width: 40%;
         height: 110%;
     }
+    .container{
+        height: 97vh;
+        width: 40vw;
+    }
+    .item{
+        width: 20%;
+        height: 23%;
+    }
+    .game{
+        gap: 2px;
+    }
+    h2{
+        font-size: 20px;
+        margin-top: 1.5em;
+    }
+    .count{
+        padding: 10px;
+        font-size: 13px;
+    }
+    .reset{
+        width: 34vw;
+    }
+}
+
+@media screen and (max-width: 1400px){
+    .container{
+        max-width: 40vw;
+        min-width: 50vw;
+    }
+    .item{
+        width: 20%;
+        height: 23%;
+    }
+}
+
+
+@media screen and (max-width: 1350px){
+    .level-game{
+        width: 50%;
+        height: 110%;
+    }
 }
 
 @media screen and (max-width: 1275px){
     .level-game{
         width: 50%;
         height: 110%;
+    }
+    .container{
+        max-width: 50vw;
+        min-width: 60vw;
     }
 }
 @media screen and (max-width: 1000px){
@@ -376,8 +421,8 @@ h2{
       
     }
     .item{
-        max-width: 25%;
-        height: 20%;
+        width: 21%;
+        height: 22%;
     }
     h2{
         font-size: 2.5em;
@@ -389,12 +434,16 @@ h2{
 }
 
 @media screen and (max-width: 768px){
+    .container{
+        width: 70vw;
+        height: 95vh;
+    }
     .item{
-        height: 18%;
+        height: 23%;
         width: 24%;
     }
     .game{
-        gap: 1px;
+        gap: 0.6px;
     }
     .count{
         padding: 6.5px;
@@ -405,7 +454,7 @@ h2{
         width: 100%;
     }
     .reset{
-        width: 125%;
+        width: 90%;
     }
     .youWin{
         font-size: 35px;
@@ -417,19 +466,16 @@ h2{
 
 @media screen and (max-width: 550px){
     .container{
-        width: 75vw;
-        height: 90vh;
+        max-width: 50vw;
+        min-width: 60vw;
     }
-    .game{
-        width: 65vw;
-    } 
     .item{
-        max-width: 21%;
-        height: 80px;
+        width: 23%;
+        height: 19%;
     }
     h2{
         font-size: 1.6em;
-        width: 100%;
+        width: 200%;
     }
     .lose p{
         font-size: 30px;
@@ -442,7 +488,7 @@ h2{
         padding: 15px 30px;
     }
     .reset {
-        width: 310px;
+        width: 130%;
         font-size: 15px;
         letter-spacing: 4px;
     }
@@ -452,23 +498,28 @@ h2{
 }
 
 @media screen and (max-width: 450px){
+    .container{
+        max-width: 75vw;
+        min-width: 65vw;
+    }
     .reset{
         font-size: 15px;
         font-weight: bolder;
-        width: 130%;
+        width: 110%;
         padding: 10px 15px;
         text-align: center;
     }
+
     .count{
         padding: 5px;
         font-size: 7px;
     }
     .item{
-        height: 17%;
-
+        width: 24%;
+        height: 18%;
     }
     h2{
-        width: 300px;
+        width: 400px;
         font-size: 17px;
     }
     .great{
