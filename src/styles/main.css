@@ -6,10 +6,9 @@ body{
     background-image: url(../imgs/marvelBody.jpg);
     background-size: cover;
     background-blend-mode: color-burn;
-    background-color: var(--red);
     user-select: none;
-    animation: dow 20s linear infinite ;
-    animation-delay: 1000ms;
+    animation: dow 15s linear infinite ;
+    flex-direction: column;
 }
 :root{
     --vine: #4B0A08;
@@ -32,7 +31,7 @@ body{
     );
     padding: 40px 60px;
     border-radius: 7px;
-    box-shadow: 3px 2px 9px #000000de;
+    box-shadow: 5px 5px 9px #000000de;
 }
 
 h2{
@@ -40,13 +39,14 @@ h2{
     color: var(--red);
     text-transform: uppercase;
     letter-spacing: 0.1em;
+    text-align: center;
 }
 
 .logoMarvel{
     width: 90px;
     height: 27px;
     position: absolute;
-    z-index: 1;
+    z-index: 0;
     top: 15px;
 }
 
@@ -67,23 +67,33 @@ h2{
 
 .reset:focus{/*QUANDO CLICA FAZ ALGUMA COISA!!!!!!!!!!!!!!!!!!!!!!*/
     color: #fff;
-    background-color: var(--red);
+    background-color: var(--burn-yellow);
+}
+.reset:hover{
+    transform: scale(1.02);
+    transition: .7s;
+}
+
+.reset:not(:hover){
+    transition: .7s;
 }
 
 .game{
-    width: 430px;
-    height: 430px;
+    width: 500px;
+    height: 500px;
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     transform-style: preserve-3d;
     perspective: 500px;
+    border-radius: 6px;
+    justify-content: space-between  ;
 }
 
 .item{
     position: relative;
-    width: 100px;
-    height: 100px;
+    width: 23%;
+    height: 23%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -104,16 +114,99 @@ h2{
 .item::after{
     content: "";
     font-size: 20px;
+    background-image: url(../imgs/logoMarvelAvesso.png);
+    background-size: 97%;
+    background-repeat: no-repeat;
+    background-color: #fff;
+    background-position: center;
     position: absolute;
     color: var(--red);
     inset: 0;
-    background: #ffffff;
     transition: 0.25s;
     transform: rotateY(0deg);
     border-radius: 6px;
     backface-visibility: hidden;
     box-shadow: 1px 1px 15px black;
     z-index: 1;
+}
+
+.lose{
+    color: #fff;
+    width: 502px;
+    height: 500px;
+    border-radius: 6px;
+    background-image: url("https://pm1.aminoapps.com/6335/2fcc04fb4a2f118c992aa9fd38ed65b8ab30e904_hq.jpg");
+    font-size: 50px;
+    text-shadow: 2px 2px 5px rgb(255, 255, 255);
+    font-weight: bolder;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-size: cover;
+    transition: all .9s linear;
+}
+
+.level-game{
+    width: 502px;
+    height: 520px;
+    background: linear-gradient(
+        325deg, var(--vine), var(--light-vine) ,
+        var(--red), var(--golden) , var(--burn-yellow));
+    background-size: 300% 300%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 6px solid #fff;
+    border-radius: 6px;
+    text-align: center;
+    color: #fff;
+    animation: colors 10s ease infinite;
+    position: absolute;
+    z-index: 1;
+}
+.level{
+    display: flex;
+    flex-direction: column;
+    height: 40%;
+    gap: 10px;
+}
+
+.level button{
+    padding: 25px 70px;
+    background-color: #ffffff00;
+    outline: none;
+    border: 1px solid #fff;
+    color: #fff;
+    border-radius: 6px;
+    font-size: 20px;
+}
+.level button:hover{
+    transform: scale(1.1);
+    transition: .5s;
+    cursor: pointer;
+}
+
+.level button:not(:hover){
+    transition: .5s;
+}
+
+.count{
+    color: #fff;
+    font-size: 13.5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--red);
+    border: 3px solid #fff;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#time{
+    text-align: center;
 }
 
 .item.boxOpen { /*TODO .item QUE TIVER A CLASSE .boxOpen ELE FAZ ALGUMA COISA*/
@@ -129,21 +222,40 @@ h2{
     animation: animFind .8s normal;
 }
 
+.great{
+    width: 100%;
+    font-weight: bolder;
+    font-size: 100px;
+    color: var(--golden);
+    text-shadow: 4px 4px 5px var(--red);
+    position: absolute;
+    top: 110px;
+    right: -50px;
+    animation: great .4s linear normal;
+}
+
 .youWin{
-    width: 250px;
-    height: 150px;
+    width: 502px;
+    height: 510px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-color: var(--light-vine);
-    color: #fff;
+    color: var(--golden);
+    background-blend-mode: multiply;
+    background-color: var(--red);
+    text-shadow: 4px 4px 5px var(--red);
     position: absolute;
-    top: 15px;
-    border: 2px solid var(--golden);
-    font-size: 20px;
+    top: 210px;
+    border: 6px solid var(--golden);
+    background-image: url(https://static1.cbrimages.com/wordpress/wp-content/uploads/2019/08/4-3.png?q=50&fit=crop&w=738&h=369);
+    background-repeat: no-repeat;
+    background-size: 210%;
+    background-position: 50%;
+    font-size: 45px;
+    font-weight: bolder;
     border-radius: 10px;
-    animation: cong 2s linear infinite;
+    z-index: 1;
 }
 
 @keyframes animFind {
@@ -155,34 +267,89 @@ h2{
 @keyframes dow{
     0%{
         background-color: var(--red);
-        background-size: 105%;
     }
     25%{
         background-color: var(--light-vine);
-        background-size: 103%;
     }
     50%{
         background-color: var(--burn-yellow);
-        background-size: 100%;
     }
     75%{
         background-color: var(--golden);
-        background-size: 103%;
     }
     100%{
         background-color: var(--red);
-        background-size: 105%;
     }
 }
 
-@keyframes cong {
+@keyframes great{
     0%{
-        transform: scale(1.2);
+        transform: scale(1);
+        display: block;
     }
     50%{
-        transform: scale(1);
+        transform: scale(2);
+    }
+}
+
+
+@keyframes colors {
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
     }
     100%{
-        transform: scale(1.2);
+        background-position: 0% 50%;
+    }
+}
+
+@media screen and (max-width: 900px){
+    .container{
+        width: 60vw;
+    }
+    .game{
+        width: 50vw;
+      
+    }
+    .item{
+        max-width: 25%;
+        height: 20%;
+    }
+    h2{
+        font-size: 2.5em;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .game{
+        width: 50vw;
+    } 
+    .item{
+        max-width: 21%;
+        height: 80px;
+    }
+    h2{
+        font-size: 1.6em;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 550px){
+    .container{
+        width: 75vw;
+    }
+    .game{
+        width: 65vw;
+    } 
+    .item{
+        max-width: 21%;
+        height: 80px;
+    }
+    h2{
+        font-size: 1.6em;
+        width: 100%;
     }
 }
