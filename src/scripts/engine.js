@@ -115,8 +115,10 @@ function playaudio(audioName,vol = 2, optionLoop = 0){
 }
 
 function removeElement(){
-    const li = document.querySelector('p');
-    document.querySelector('.game').removeChild(li);
+    const great = document.querySelectorAll('.game .great');
+    great.forEach((element) => {
+        element.style.display = 'none'
+    })
 }
 
 function checkMatch(){
@@ -125,11 +127,14 @@ function checkMatch(){
         openCards[1].classList.add("boxMatch");
         openCards[0].classList.add("animFind");
         openCards[1].classList.add("animFind");
+        const box = document.createElement('div')
         const p = document.createElement('p');
-        p.innerHTML = `<span class="great">GREAT!!</span>`;
-        document.querySelector('.game').appendChild(p);
+        box.classList.add('great')
+        p.innerHTML = `<p>GREAT!!</p>`;
+        box.appendChild(p)
+        document.querySelector('.game').appendChild(box);
         playaudio("great");
-        setTimeout(removeElement, 700);
+        setTimeout(removeElement, 500);
     } else {
         openCards[0].classList.remove("boxOpen");
         openCards[1].classList.remove("boxOpen");
