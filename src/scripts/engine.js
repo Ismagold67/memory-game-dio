@@ -3,14 +3,17 @@ const state = {
         time: document.querySelector('#time'),
         buttonChoice: document.querySelectorAll('.level button'),
         level: document.querySelector('.level-game'),
+        game: document.querySelectorAll('.game img')
     },
     values: {
         interation: 0,
         currentTime: 0,
-        initialTime: 0
+        initialTime: 0,
+        currentTimeToInitGame: 5,
     },
     actions: {
         stopTime: clearInterval(setInterval(countDown, 1000)),
+        stopTimeCountDownInitial: clearInterval(setInterval(countDownToinitGame, 1000)),
     }
 }
 
@@ -48,7 +51,6 @@ for(let i = 0; i < emojis.length; i++){
 function countDown(){
     state.values.currentTime--;
     state.view.time.textContent = state.values.currentTime;
-    
     if(state.values.currentTime <= 0){
         const div = document.createElement('div');
         const p = document.createElement('p');
@@ -57,6 +59,36 @@ function countDown(){
         div.appendChild(p);
         document.querySelector(".game").appendChild(div);
         clearInterval(state.actions.stopTime);
+    }
+}
+
+function countDownToinitGame(){
+    const div = document.createElement('div')
+    const h1 = document.createElement('h1')
+    div.classList.add('countDownToInitial')
+    state.values.currentTimeToInitGame--;
+    h1.textContent = `${state.values.currentTimeToInitGame - 1}`
+    div.appendChild(h1)
+    document.querySelector('.game').appendChild(div);
+
+    if(state.values.currentTimeToInitGame > 1){
+        playaudio('cont', 7)
+    } 
+    if(state.values.currentTimeToInitGame === 1){
+        playaudio('go', 7)
+        h1.textContent = 'GO!'
+    }
+
+    if(state.values.currentTimeToInitGame === 0){
+        const countDowns = document.querySelectorAll('.countDownToInitial')
+        countDowns.forEach((element) => {
+            element.style.display = 'none'
+        })
+    }
+
+    if(state.values.currentTimeToInitGame <= 0){
+        clearInterval(state.actions.stopTimeCountDownInitial);
+        state.actions.stopTime = setInterval(countDown, 1000);
     }
 }
 
@@ -81,7 +113,6 @@ function playaudio(audioName,vol = 2, optionLoop = 0){
     }
     audio.play();
 }
-
 
 function removeElement(){
     const li = document.querySelector('p');
@@ -127,17 +158,17 @@ function levelChoice(){
         level.addEventListener('click', () => {
             if(level.className === 'easy'){
                 state.values.currentTime = 60; 
-                state.actions.stopTime = setInterval(countDown, 1000);
+                state.actions.stopTimeCountDownInitial = setInterval(countDownToinitGame, 700);
                 state.view.time.textContent = state.values.currentTime;
                 state.view.level.style.display = 'none'
             } else if(level.className === 'medium'){
                 state.values.currentTime = 40;
-                state.actions.stopTime = setInterval(countDown, 1000);
+                state.actions.stopTimeCountDownInitial = setInterval(countDownToinitGame, 700);
                 state.view.time.textContent = state.values.currentTime;
                 state.view.level.style.display = 'none';
             } else {
                 state.values.currentTime = 30;
-                state.actions.stopTime = setInterval(countDown, 1000);
+                state.actions.stopTimeCountDownInitial = setInterval(countDownToinitGame, 700);
                 state.view.time.textContent = state.values.currentTime;
                 state.view.level.style.display = 'none';
             }
@@ -152,6 +183,7 @@ function init(){
     levelChoice();
 }
 init();
+
 
 
 

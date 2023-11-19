@@ -29,7 +29,7 @@ body{
         325deg, var(--vine) 0%, var(--light-vine) 30%,
         var(--red) 50%, var(--golden) 70%, var(--burn-yellow) 100%
     );
-    padding: 40px 60px;
+    padding: 30px 50px;
     border-radius: 7px;
     box-shadow: 5px 5px 9px #000000de;
 }
@@ -40,6 +40,7 @@ h2{
     text-transform: uppercase;
     letter-spacing: 0.1em;
     text-align: center;
+    margin-top: 10px;
 }
 
 .logoMarvel{
@@ -118,26 +119,28 @@ h2{
     background-size: 97%;
     background-repeat: no-repeat;
     background-color: #fff;
+    border: 4px solid var(--red);
     background-position: center;
     position: absolute;
     color: var(--red);
     inset: 0;
     transition: 0.25s;
     transform: rotateY(0deg);
-    border-radius: 6px;
+    border-radius: 8px;
     backface-visibility: hidden;
-    box-shadow: 1px 1px 15px black;
+    box-shadow: 1px 1px 8px rgb(255, 255, 255);
     z-index: 1;
 }
 
 .lose{
     color: #fff;
-    width: 502px;
-    height: 500px;
+    width: 100%;
+    height: 100%;
     border-radius: 6px;
     background-image: url("https://pm1.aminoapps.com/6335/2fcc04fb4a2f118c992aa9fd38ed65b8ab30e904_hq.jpg");
     font-size: 50px;
     text-shadow: 2px 2px 5px rgb(255, 255, 255);
+    box-shadow: 2px 2px 5px #fff;
     font-weight: bolder;
     display: flex;
     position: absolute;
@@ -146,11 +149,14 @@ h2{
     text-align: center;
     background-size: cover;
     transition: all .9s linear;
+    flex-wrap: wrap;
+    overflow: hidden;
 }
 
+
 .level-game{
-    width: 502px;
-    height: 520px;
+    width: 38%;
+    height: 76%;
     background: linear-gradient(
         325deg, var(--vine), var(--light-vine) ,
         var(--red), var(--golden) , var(--burn-yellow));
@@ -234,6 +240,29 @@ h2{
     animation: great .4s linear normal;
 }
 
+.countDownToInitial{
+    font-size: 90px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        325deg, var(--vine), var(--light-vine) ,
+        var(--red), var(--golden) , var(--burn-yellow));
+    color: var(--golden);
+    background-size: 300% 300%;
+    text-shadow: 4px 4px 5px var(--red);
+    position: absolute;
+    border: 5px solid #fff;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: colors 10s linear infinite;
+}
+
+.countDownToInitial h1{
+    animation: countDown 1s linear normal;
+}
+
 .youWin{
     width: 502px;
     height: 510px;
@@ -242,7 +271,7 @@ h2{
     justify-content: center;
     text-align: center;
     color: var(--golden);
-    background-blend-mode: multiply;
+    background-blend-mode: luminosity;
     background-color: var(--red);
     text-shadow: 4px 4px 5px var(--red);
     position: absolute;
@@ -305,6 +334,38 @@ h2{
     }
 }
 
+@keyframes countDown {
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.3);
+    }
+    100%{
+        transform: scale(1.6);
+    }
+}
+
+@media screen and (max-width: 1496px){
+    .level-game{
+        width: 40%;
+        height: 110%;
+    }
+}
+
+@media screen and (max-width: 1275px){
+    .level-game{
+        width: 50%;
+        height: 110%;
+    }
+}
+@media screen and (max-width: 1000px){
+    .level-game{
+        width: 60%;
+        height: 110%;
+    }
+}
+
 @media screen and (max-width: 900px){
     .container{
         width: 60vw;
@@ -321,6 +382,9 @@ h2{
         font-size: 2.5em;
         width: 100%;
     }
+    .reset{
+        width: 110%;
+    }
 }
 
 @media screen and (max-width: 768px){
@@ -335,11 +399,16 @@ h2{
         font-size: 1.6em;
         width: 100%;
     }
+    .reset{
+        width: 125%;
+    }
+    
 }
 
 @media screen and (max-width: 550px){
     .container{
         width: 75vw;
+        height: 90vh;
     }
     .game{
         width: 65vw;
@@ -351,5 +420,73 @@ h2{
     h2{
         font-size: 1.6em;
         width: 100%;
+    }
+    .lose p{
+        font-size: 30px;
+    }
+    .level-game{
+        height: 80%;
+        width: 80%;
+    }
+    .level-game button{
+        padding: 15px 30px;
+    }
+    .reset {
+        width: 310px;
+        font-size: 15px;
+        letter-spacing: 4px;
+    }
+}
+
+@media screen and (max-width: 450px){
+    .reset{
+        font-size: 15px;
+        font-weight: bolder;
+        width: 140%;
+        padding: 10px 15px;
+        text-align: center;
+    }
+    .count{
+        padding: 5px;
+        font-size: 7px;
+    }
+    .item{
+        height: 19%;
+    }
+    h2{
+        width: 300px;
+        font-size: 17px;
+    }
+}
+
+@media screen and (max-width: 350px){
+    .count h1{
+        font-size: 12px;
+    }
+    .count{
+        width: 20%;
+    }
+    .game {
+        gap: 0;
+    }
+    .item {
+        height: 15%;
+    }
+    .reset{
+        width: 190%;
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 250px) {
+    .container{
+        width: 90vw;
+        min-height: 80vh;
+    }
+    .level-game {
+        font-size: 8px;
+    }
+    .level-game button{
+        padding: 9px;
     }
 }
