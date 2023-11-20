@@ -19,72 +19,29 @@ body{
 }
 
 .container {
+    width: 50vw;
+    height: 90vh;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    
     background: linear-gradient(
         325deg, var(--vine) 0%, var(--light-vine) 30%,
         var(--red) 50%, var(--golden) 70%, var(--burn-yellow) 100%
     );
-    padding: 30px 50px;
+    /* padding: 5%; */
     border-radius: 7px;
     box-shadow: 5px 5px 9px #000000de;
 }
 
-h2{
-    font-size: 3em;
-    color: var(--red);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    text-align: center;
-    margin-top: 10px;
-}
-
-.logoMarvel{
-    width: 90px;
-    height: 27px;
-    position: absolute;
-    z-index: 0;
-    top: 15px;
-}
-
-.reset {
-    padding: 15px 20px;
-    width: 100%;
-    color: #000;
-    background-color: #fff;
-    border: none;
-    font-size: 1.5em;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    cursor: pointer;
-    font-weight: 600;
-    border-radius: 7px;
-    box-shadow: 3px 2px 9px #1d1d1d;
-}
-
-.reset:focus{/*QUANDO CLICA FAZ ALGUMA COISA!!!!!!!!!!!!!!!!!!!!!!*/
-    color: #fff;
-    background-color: var(--burn-yellow);
-}
-.reset:hover{
-    transform: scale(1.02);
-    transition: .7s;
-}
-
-.reset:not(:hover){
-    transition: .7s;
-}
-
 .game{
-    width: 500px;
-    height: 500px;
+    width: 60%;
+    height: 80%;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 0.7em;
     transform-style: preserve-3d;
     perspective: 500px;
     border-radius: 6px;
@@ -93,8 +50,8 @@ h2{
 
 .item{
     position: relative;
-    width: 23%;
-    height: 23%;
+    width: 2.1em;
+    height: 3em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -132,6 +89,53 @@ h2{
     z-index: 1;
 }
 
+h2{
+    font-size: 3em;
+    color: var(--red);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-align: center;
+    margin-top: .8em;
+}
+
+.logoMarvel{
+    max-width: 5%;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+
+.reset {
+    width: 60%;
+    height: 10%;
+    padding: 1.3%;
+    margin: 4% 0 6% 0;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    font-size: 1.5em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 7px;
+    box-shadow: 3px 2px 9px #1d1d1d;
+    
+}
+
+.reset:focus{/*QUANDO CLICA FAZ ALGUMA COISA!!!!!!!!!!!!!!!!!!!!!!*/
+    color: #fff;
+    background-color: var(--burn-yellow);
+}
+.reset:hover{
+    transform: scale(1.02);
+    transition: .7s;
+}
+
+.reset:not(:hover){
+    transition: .7s;
+}
+
 .lose{
     color: #fff;
     width: 100%;
@@ -155,8 +159,8 @@ h2{
 
 
 .level-game{
-    width: 38%;
-    height: 76%;
+    width: 100%;
+    height: 100%;
     background: linear-gradient(
         325deg, var(--vine), var(--light-vine) ,
         var(--red), var(--golden) , var(--burn-yellow));
@@ -203,12 +207,29 @@ h2{
     color: #fff;
     font-size: 13.5px;
     position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     top: 0;
     right: 0;
     background-color: var(--red);
     border: 3px solid #fff;
     border-radius: 10px;
     padding: 10px;
+}
+#btn-reset{
+    width: 5vw;
+    background-color: #fff;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 0;
+    display: none;
+    margin-bottom: .5em;
+}
+
+#btn-reset:hover{
+    cursor: pointer;
 }
 
 #time{
@@ -348,213 +369,131 @@ h2{
 }
 
 @media screen and (max-width: 1496px){
-    .level-game{
-        width: 40%;
-        height: 110%;
-    }
     .container{
-        height: 97vh;
-        width: 40vw;
-    }
-    .item{
-        width: 20%;
-        height: 23%;
-    }
-    .game{
-        gap: 2px;
-    }
-    h2{
-        font-size: 20px;
-        margin-top: 1.5em;
-    }
-    .count{
-        padding: 10px;
-        font-size: 13px;
-    }
-    .reset{
-        width: 34vw;
-    }
-}
-
-@media screen and (max-width: 1400px){
-    .container{
-        max-width: 40vw;
-        min-width: 50vw;
-    }
-    .item{
-        width: 20%;
-        height: 23%;
-    }
-}
-
-
-@media screen and (max-width: 1350px){
-    .level-game{
-        width: 50%;
-        height: 110%;
-    }
-}
-
-@media screen and (max-width: 1275px){
-    .level-game{
-        width: 50%;
-        height: 110%;
-    }
-    .container{
-        max-width: 50vw;
-        min-width: 60vw;
-    }
-}
-@media screen and (max-width: 1000px){
-    .level-game{
-        width: 60%;
-        height: 110%;
-    }
-}
-
-@media screen and (max-width: 900px){
-    .container{
-        width: 60vw;
-    }
-    .game{
-        width: 50vw;
-      
-    }
-    .item{
-        width: 21%;
-        height: 22%;
-    }
-    h2{
-        font-size: 2.5em;
-        width: 100%;
-    }
-    .reset{
-        width: 110%;
-    }
-}
-
-@media screen and (max-width: 768px){
-    .container{
-        width: 70vw;
         height: 95vh;
     }
     .item{
-        height: 23%;
-        width: 24%;
+        width: 1.7em;
+        height: 2.5em;
     }
     .game{
-        gap: 0.6px;
+        width: 55%;
     }
-    .count{
-        padding: 6.5px;
-        font-size: 7.5px;
-    }
-    h2{
-        font-size: 1.6em;
-        width: 100%;
+    .logoMarvel{
+        max-width: 3.5%;
     }
     .reset{
-        width: 90%;
+        width: 55%;
     }
-    .youWin{
-        font-size: 35px;
+}   
+
+@media screen and (max-width: 1228px){
+    .item{
+        width: 1.7em;
+        height: 2.5em;
     }
-    .countDownToInitial{
-        font-size: 40px;
+    .game{
+        width: 65%;
     }
-}
+    .reset{
+        width: 65%;
+    }
+    .logoMarvel{
+        max-width: 3.9%;
+    }
+    .count{
+        font-size: 0.8em;
+    }
+    h2{
+        font-size: 2.3em;
+    }
+}  
+
+@media screen and (max-width: 1035px){
+    .item{
+        width: 1.7em;
+        height: 2.5em;
+    }
+    .game{
+        width: 75%;
+    }
+    .reset{
+        width: 75%;
+    }
+    .logoMarvel{
+        max-width: 3.9%;
+    }
+    .count{
+        font-size: 0.6em;
+    }
+}  
+
+@media screen and (max-width: 898px){
+    .container{
+        width: 55vw;
+    }
+    .item{
+        width: 1.6em;
+        height: 2.2em;
+    }
+    .game{
+        width: 77%;
+    }
+    h2{
+        margin-top: 0;
+        font-size: 3.5vw;
+    }
+    .reset{
+        display: none;
+    }
+    #btn-reset{
+        display: block;
+    }
+    .logoMarvel{
+        max-width: 3.9%;
+    }
+    .count{
+        font-size: 1.2vw;
+    }
+}  
+
+@media screen and (max-width: 753px){
+    .container{
+        width: 60vw;
+    }
+    .item{
+        width: 10vw;
+        height: 15vh;
+    }
+    .game{
+        gap: 0;
+        width: 75%;
+    }
+    .logoMarvel{
+        max-width: 12%;
+    }
+    #btn-reset{
+        width: 10vw;
+    }
+}  
 
 @media screen and (max-width: 550px){
     .container{
-        max-width: 50vw;
-        min-width: 60vw;
-    }
-    .item{
-        width: 23%;
-        height: 19%;
-    }
-    h2{
-        font-size: 1.6em;
-        width: 200%;
-    }
-    .lose p{
-        font-size: 30px;
-    }
-    .level-game{
-        height: 80%;
-        width: 80%;
-    }
-    .level-game button{
-        padding: 15px 30px;
-    }
-    .reset {
-        width: 130%;
-        font-size: 15px;
-        letter-spacing: 4px;
-    }
-    .youWin{
-        font-size: 25px;
-    }
-}
-
-@media screen and (max-width: 450px){
-    .container{
-        max-width: 75vw;
-        min-width: 65vw;
-    }
-    .reset{
-        font-size: 15px;
-        font-weight: bolder;
-        width: 110%;
-        padding: 10px 15px;
-        text-align: center;
-    }
-
-    .count{
-        padding: 5px;
-        font-size: 7px;
-    }
-    .item{
-        width: 24%;
-        height: 18%;
-    }
-    h2{
-        width: 400px;
-        font-size: 17px;
-    }
-    .great{
-        right: 30px;
-    }
-}
-
-@media screen and (max-width: 350px){
-    .count h1{
-        font-size: 12px;
+        width: 85vw;
     }
     .count{
-        width: 20%;
+        font-size: 1.9vw;
     }
-    .game {
-        gap: 0;
+    .item{
+        width: 16.5vw;
+        height: 17vh;
     }
-    .item {
-        height: 15%;
+    .game{
+        width: 85%;
     }
-    .reset{
-        width: 150%;
-        font-size: 10px;
+    h2{
+        font-size: 1.3em;
     }
-}
+}  
 
-@media screen and (max-width: 250px) {
-    .container{
-        width: 90vw;
-        min-height: 80vh;
-    }
-    .level-game {
-        font-size: 8px;
-    }
-    .level-game button{
-        padding: 9px;
-    }
-}
+

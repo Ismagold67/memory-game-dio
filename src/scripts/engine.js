@@ -3,7 +3,7 @@ const state = {
         time: document.querySelector('#time'),
         buttonChoice: document.querySelectorAll('.level button'),
         level: document.querySelector('.level-game'),
-        game: document.querySelectorAll('.game img')
+        game: document.querySelectorAll('.game img'),
     },
     values: {
         interation: 0,
@@ -60,6 +60,10 @@ function countDown(){
         document.querySelector(".game").appendChild(div);
         clearInterval(state.actions.stopTime);
     }
+}
+
+function resetButton(){
+    
 }
 
 function countDownToinitGame(){
@@ -186,7 +190,9 @@ function init(){
     playaudio('marvel', 4, 1);
     setInterval(x, 15);
     levelChoice();
+    resetButton();
 }
+
 init();
 
 

@@ -10,8 +10,8 @@
 </head>
 <body id="bodyy">
     
+    <img class="logoMarvel" src="src/imgs/logoMarvel.png" alt="">
     <div class="container">
-        <img class="logoMarvel" src="src/imgs/logoMarvel.png" alt="">
         <h2>JOGO DA MEMÓRIA</h2>
         <div class="game"></div>
         <button class="reset" onclick="window.location.reload()">RESET GAME</button>
@@ -19,18 +19,18 @@
             <h1>Time</h1>
             <h1 id="time">0</h1>
         </div>
-    </div>
-    <div class="level-game">
-        <h1>ESCOLHA A DIFICULDADE</h1>
-        <br><br>
-        <div class="level">
-            <button class="easy">FÁCIL</button>
-            <button class="medium">MÉDIO</button>
-            <button class="hard">DIFÍCIL</button>
+        <img id="btn-reset" onclick="window.location.reload()" src="https://cdn-icons-png.flaticon.com/512/2618/2618245.png" alt="botao-redefinir">
+        <div class="level-game">
+            <h1>ESCOLHA A DIFICULDADE</h1>
+            <br><br>
+            <div class="level">
+                <button class="easy">FÁCIL</button>
+                <button class="medium">MÉDIO</button>
+                <button class="hard">DIFÍCIL</button>
+            </div>
         </div>
     </div>
     
-
     <script defer src="./src/scripts/engine.js"></script>
 </body>
 </html>
