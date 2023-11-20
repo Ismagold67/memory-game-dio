@@ -160,7 +160,7 @@ h2{
 
 .level-game{
     width: 100%;
-    height: 100%;
+    height: 106.2%;
     background: linear-gradient(
         325deg, var(--vine), var(--light-vine) ,
         var(--red), var(--golden) , var(--burn-yellow));
