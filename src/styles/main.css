@@ -57,6 +57,7 @@ body{
     align-items: center;
     background-color: #fff;
     border-radius: 6px;
+    border: 4px solid var(--red);
    
 
     font-size: 3.5em;
@@ -142,6 +143,7 @@ h2{
     height: 106.2%;
     border-radius: 6px;
     background-image: url("https://pm1.aminoapps.com/6335/2fcc04fb4a2f118c992aa9fd38ed65b8ab30e904_hq.jpg");
+    background-size: 150%;
     font-size: 50px;
     text-shadow: 2px 2px 5px rgb(255, 255, 255);
     box-shadow: 2px 2px 5px #fff;
