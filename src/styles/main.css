@@ -223,7 +223,7 @@ h2{
     background-color: #fff;
     border-radius: 10px;
     position: absolute;
-    bottom: 0;
+    top: 0;
     display: none;
     margin-bottom: .5em;
 }
@@ -448,6 +448,7 @@ h2{
     }
     #btn-reset{
         display: block;
+
     }
     .logoMarvel{
         max-width: 3.9%;
