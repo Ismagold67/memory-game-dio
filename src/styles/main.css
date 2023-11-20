@@ -221,6 +221,7 @@ h2{
 #btn-reset{
     width: 5vw;
     background-color: #fff;
+    border: 2px solid var(--red);
     border-radius: 10px;
     position: absolute;
     top: 0;
@@ -461,6 +462,7 @@ h2{
 @media screen and (max-width: 753px){
     .container{
         width: 60vw;
+        margin-top: -20px;
     }
     .item{
         width: 10vw;
