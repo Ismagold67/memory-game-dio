@@ -480,6 +480,7 @@ h2{
 @media screen and (max-width: 550px){
     .container{
         width: 85vw;
+        height: 80vh;
     }
     .count{
         font-size: 1.9vw;
