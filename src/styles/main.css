@@ -139,7 +139,7 @@ h2{
 .lose{
     color: #fff;
     width: 100%;
-    height: 100%;
+    height: 106.2%;
     border-radius: 6px;
     background-image: url("https://pm1.aminoapps.com/6335/2fcc04fb4a2f118c992aa9fd38ed65b8ab30e904_hq.jpg");
     font-size: 50px;
@@ -288,7 +288,7 @@ h2{
 
 .youWin{
     width: 100%;
-    height: 100%;
+    height: 106.2%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -462,7 +462,7 @@ h2{
 @media screen and (max-width: 753px){
     .container{
         width: 60vw;
-        margin-top: -20px;
+        margin-top: -7vh;
     }
     .item{
         width: 10vw;
