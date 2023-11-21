@@ -34,6 +34,8 @@ body{
     /* padding: 5%; */
     border-radius: 7px;
     box-shadow: 5px 5px 9px #000000de;
+    animation: colors 10s ease infinite;
+    background-size: 200% 200%;
 }
 
 .game{
@@ -91,11 +93,12 @@ body{
 
 h2{
     font-size: 3em;
-    color: var(--red);
+    color: var(--golden);
     text-transform: uppercase;
     letter-spacing: 0.1em;
     text-align: center;
     margin-top: .8em;
+    text-shadow: 2.5px 2.5px 1.5px var(--red);
 }
 
 .logoMarvel{
